@@ -333,7 +333,6 @@
 
       <div class="links">
         <a class="btn primary" href="#">Paper</a>
-        <a class="btn" href="#">arXiv</a>
         <a class="btn" href="https://github.com/mchaewon/CompMVR">Code</a>
         <a class="btn" href="./docs/supple.pdf">Supplementary</a>
         <!-- <a class="btn" href="#viewer">Interactive Demo</a> -->
@@ -342,7 +341,7 @@
   </header>
 
   <main>
-    <section id="viewer" class="section">
+    <!-- <section id="viewer" class="section">
       <div class="container">
         <h2>Interactive 3D Result</h2>
 
@@ -364,21 +363,40 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
 
     <section class="section">
       <div class="container">
         <h2>Abstract</h2>
         <p class="lead">
-          We present a simple and effective framework for interactive 3D visualization
-          and academic result presentation. Our method enables clean demonstration of
-          qualitative results through a web-friendly GLB viewer while preserving the
-          minimal and professional design commonly used in top-tier conference project pages.
+          Real-world 3D reconstruction pipelines often rely on multi-view images degraded by lossy compression. 
+          While compression artifacts have been extensively studied in single-image or video restoration, 
+          their impact on multi-view geometry remains largely overlooked. 
+          In this work, we identify compression-induced cross-view geometric inconsistency as a critical failure mode, 
+          where view-dependent artifacts disrupt feature matching, dense correspondence, camera parameter estimation, 
+          and downstream 3D reconstruction tasks such as novel view synthesis. 
         </p>
         <p>
-          Replace this paragraph with your real abstract. Usually 1–2 paragraphs are enough.
-          Keep it concise, technical, and aligned with the paper contribution.
+          To address this problem, we propose <b>CompMVR</b>, a compression-aware multi-view diffusion restoration framework 
+          and compressed datasets that jointly refines compressed views while preserving cross-view consistency. 
+          Unlike conventional restoration methods that optimize each image independently for 2D perceptual quality, 
+          CompMVR leverages learned compression priors and cross-view correspondence to recover visual details while 
+          improving geometric reliability across views. Experiments across diverse datasets, codecs, and compression levels 
+          demonstrate gains in restoration quality and downstream 3D tasks, including novel-view synthesis, camera pose estimation, 
+          and view matching. These results establish compressed multi-view restoration as a distinct problem and highlight its 
+          importance for 3D reconstruction under lossy compression.
         </p>
+        <p>
+          Experiments across diverse datasets, codecs, and compression levels demonstrate gains in restoration quality and 
+          downstream 3D tasks, including novel-view synthesis, camera pose estimation, and view matching. 
+          These results establish compressed multi-view restoration as a distinct problem and highlight its 
+          importance for 3D reconstruction under lossy compression.
+        </p>
+        <img
+              src="./assets/figure1.png"
+              alt="Problem overview"
+            />
       </div>
     </section>
 
