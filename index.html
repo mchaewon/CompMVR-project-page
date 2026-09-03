@@ -510,8 +510,14 @@
       <div class="container">
         <div>
           <h2>Method Overview</h2>
+          <div class="framework-wrapper">
+          <img
+            src="./assets/main_framework.png"
+            alt="Overview of the CompMVR framework"
+            class="framework-img"
+          />
+        </div>
           <p>
-            Overview of our proposed CompMVR. 
             (a) In Stage 1, we learn a compression-aware latent representation by training a compression prior embedder. 
             The latent is optimized through image reconstruction and supervision of coding parameters (codec type and QP). 
             (b) In Stage 2, we perform multi-view restoration using a diffusion model conditioned on the learned compression prior. 
@@ -525,14 +531,6 @@
             <li>How the method differs from prior work</li>
             <li>Why the resulting 3D output matters</li>
           </ul> -->
-        </div>
-
-        <div class="framework-wrapper">
-          <img
-            src="./assets/main_framework.png"
-            alt="Overview of the CompMVR framework"
-            class="framework-img"
-          />
         </div>
       </div>
     </section>
