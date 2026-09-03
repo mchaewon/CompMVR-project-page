@@ -279,8 +279,44 @@
       justify-content: center;
       margin-top: 24px;
     }
+    .section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* 일반적인 하나짜리 quantitative result */
+    .result-figure {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto 30px;
+    }
+
+    .result-figure img {
+      width: 100%;
+      display: block;
+    }
+
+    .result-figure figcaption {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: #333;
+    }
+
+
+    /* Camera pose + View matching */
+    .quant-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+      margin: 24px auto 36px;
+    }
+
     .quant-item {
-      margin: 0;
+      margin: 0;          /* figure의 기본 margin 제거 */
+      min-width: 0;
     }
 
     .quant-item img {
@@ -290,10 +326,37 @@
     }
 
     .quant-item figcaption {
-      margin-top: 12px;
-      font-size: 0.95rem;
+      margin-top: 10px;
+      font-size: 0.92rem;
       line-height: 1.5;
-      color: var(--muted);
+      color: #333;
+    }
+
+
+    /* Qualitative result */
+    .qualitative-figure {
+      width: 85%;
+      max-width: 1000px;
+      margin: 20px auto 36px;
+    }
+
+    .qualitative-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    /* 모바일 */
+    @media (max-width: 768px) {
+      .quant-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-figure,
+      .qualitative-figure {
+        width: 100%;
+      }
     }
     @media (max-width: 768px) {
       .framework-img {
@@ -471,75 +534,121 @@
 
     <section class="section">
       <div class="container">
+
         <h2>Experiments</h2>
         <h3>Quantitative Results</h3>
-          <b>2D restoration</b>
+
+
+        <!-- 2D Restoration -->
+        <h4>2D Restoration</h4>
+
+        <figure class="result-figure">
           <img
             src="./assets/2Deval_consistency.png"
-            alt="2Deval_consistency"
+            alt="2D restoration and cross-view consistency results"
           />
+
           <figcaption>
-            CompMVR achieves competitive 2D restoration quality and the best cross-view consistency, 
-            demonstrating superior geometric reliability over state-of-the-art single-image and video restoration methods.
+            CompMVR achieves competitive 2D restoration quality and the best
+            cross-view consistency, demonstrating superior geometric reliability
+            over state-of-the-art single-image and video restoration methods.
           </figcaption>
-          <b>3D Downstream Tasks</b>
+        </figure>
+
+
+        <!-- 3D Downstream Tasks -->
+        <h4>3D Downstream Tasks</h4>
+
+        <!-- NVS -->
+        <figure class="result-figure">
           <img
             src="./assets/3DGS_eval.png"
-            alt="3DGS_eval"
+            alt="Novel-view synthesis results"
           />
+
           <figcaption>
-            <b>NVS (3DGS).</b> Across diverse codec and QP settings, CompMVR consistently achieves the best novel-view synthesis performance 
-            among restoration methods, with higher PSNR/SSIM and lower LPIPS, demonstrating improved downstream 3D reconstruction quality.
+            <b>NVS (3DGS).</b>
+            Across diverse codec and QP settings, CompMVR consistently achieves
+            the best novel-view synthesis performance among restoration methods,
+            with higher PSNR/SSIM and lower LPIPS, demonstrating improved
+            downstream 3D reconstruction quality.
           </figcaption>
+        </figure>
 
-          <div class="quant-grid">
-            <figure class="quant-item">
-              <img src="./assets/camera_pose_estimation.png" alt="VGGT camera pose estimation results" />
-              <figcaption>
-                <b>camera pose estimation.</b> CompMVR consistently achieves the best camera pose estimation accuracy across diverse codec and QP settings, 
-                demonstrating that our restoration better preserves geometrically reliable cross-view information.
-              </figcaption>
-            </figure>
 
-            <figure class="quant-item">
-              <img src="./assets/view_matching.png" alt="VGGT view matching results" />
-              <figcaption>
-                <b>view matching.</b> CompMVR improves view matching across compressed views, 
-                demonstrating that restoring cross-view consistency leads to more reliable correspondences for downstream geometric tasks.
-              </figcaption>
-            </figure>
+        <!-- Camera Pose + View Matching -->
+        <div class="quant-grid">
 
-          </div>
+          <figure class="quant-item">
+            <img
+              src="./assets/camera_pose_estimation.png"
+              alt="VGGT camera pose estimation results"
+            />
+
+            <figcaption>
+              <b>Camera Pose Estimation.</b>
+              CompMVR consistently achieves the best camera pose estimation
+              accuracy across diverse codec and QP settings, demonstrating that
+              our restoration better preserves geometrically reliable cross-view
+              information.
+            </figcaption>
+          </figure>
+
+
+          <figure class="quant-item">
+            <img
+              src="./assets/view_matching.png"
+              alt="View matching results"
+            />
+
+            <figcaption>
+              <b>View Matching.</b>
+              CompMVR improves view matching across compressed views,
+              demonstrating that restoring cross-view consistency leads to more
+              reliable correspondences for downstream geometric tasks.
+            </figcaption>
+          </figure>
 
         </div>
 
-        <h3>Qualitative Comparison</h3>
-        <div>
-          <b>2D Restoration Results</b>
+        <h3>Qualitative Results</h3>
+
+        <!-- 2D Restoration -->
+        <h4>2D Restoration</h4>
+
+        <figure class="qualitative-figure">
           <img
-            class="figure-img"
             src="./assets/2D_quality.png"
             alt="2D_results"
           />
-        </div>
-        <div>
-          <b>NVS results rendered at GT camera poses</b>
+
+          <figcaption>
+            2D restoration results.
+          </figcaption>
+        </figure>
+        <figure class="qualitative-figure">
           <img
-            class="figure-img"
             src="./assets/3DGS_render.png"
             alt="3DGS_render"
           />
-        </div>
-        <div>
-          <b>Synthesized novel 3D views</b>
+
+          <figcaption>
+            NVS results rendered at GT camera poses
+          </figcaption>
+        </figure>
+        <figure class="qualitative-figure">
           <img
-            class="figure-img"
             src="./assets/3DGS_viewer.png"
             alt="3DGS_viewer"
           />
-        </div>
+
+          <figcaption>
+            Synthesized novel 3D views.
+          </figcaption>
+        </figure>
       </div>
     </section>
+
 
 
     <section class="section">
