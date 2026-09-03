@@ -623,27 +623,35 @@
           />
 
           <figcaption>
-            2D restoration results.
+            Qualitative comparison on the Free dataset. The top rows correspond to an indoor scene (Lab), and the bottom rows correspond to an outdoor scene
+            (Sky). The Lab scene is compressed using HEVC with QP 42, while the Sky scene is compressed using AV1 with QP 42. Highlighted regions reveal that our
+            method better preserves fine details and structures under severe compression
           </figcaption>
         </figure>
+        
+        <h4>3D Novel-View Synthesis</h4>
         <figure class="qualitative-figure">
           <img
             src="./assets/3DGS_render.png"
             alt="3DGS_render"
           />
-
           <figcaption>
-            NVS results rendered at GT camera poses
-          </figcaption>
+            Novel-view synthesis results rendered at ground-truth target camera poses. The top two rows correspond to HEVC QP42, and the bottom
+            two rows correspond to AVC QP42. We compare each method with the corresponding GT view using full-scene renderings and zoomed-in regions. Our method
+            better preserves object structures, text regions, and high-frequency details, producing results closer to GT than diffusion-based restoration baselines. Red
+            boxes indicate representative regions for comparison.
+          </figcaption>     
         </figure>
         <figure class="qualitative-figure">
           <img
             src="./assets/3DGS_viewer.png"
             alt="3DGS_viewer"
           />
-
           <figcaption>
-            Synthesized novel 3D views.
+            Synthesized novel 3D views from restored multi-view inputs on the Free dataset. We evaluate global consistency using scene
+            renderings synthesized from multiple viewpoints and local structural fidelity using zoomed-in regions. Views 1 and 2 correspond to HEVC QP42, and View 3
+            corresponds to AV1 QP42. Our method preserves sharper geometry-critical details and reduces blur and distortion compared with diffusion-based restoration
+            baselines. Red boxes indicate representative regions for comparison.
           </figcaption>
         </figure>
       </div>
