@@ -255,12 +255,34 @@
     .subtle {
       color: var(--muted);
     }
-    .figure-img {
+    /* .figure-img {
       width: 100%;
       max-width: 100%;
       height: auto;
       display: block;
       margin: 24px auto 0;
+    } */
+     .framework-img {
+      width: 70%;
+      height: auto;
+      display: block;
+
+      padding: 16px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .framework-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    @media (max-width: 768px) {
+      .framework-img {
+        width: 100%;
+      }
     }
 
     @media (max-width: 900px) {
@@ -407,28 +429,26 @@
 
     <section class="section">
       <div class="container">
-        <div class="grid-2">
-          <div>
-            <h2>Method Overview</h2>
-            <p>
-              Summarize the core idea of your method here. This section typically explains
-              what problem you solve, what is novel, and why your design is effective.
-            </p>
-            <ul class="feature-list">
-              <li>Problem formulation and motivation</li>
-              <li>Main architectural or algorithmic contribution</li>
-              <li>How the method differs from prior work</li>
-              <li>Why the resulting 3D output matters</li>
-            </ul>
-          </div>
+        <div>
+          <h2>Method Overview</h2>
+          <p>
+            Summarize the core idea of your method here. This section typically explains
+            what problem you solve, what is novel, and why your design is effective.
+          </p>
+          <!-- <ul class="feature-list">
+            <li>Problem formulation and motivation</li>
+            <li>Main architectural or algorithmic contribution</li>
+            <li>How the method differs from prior work</li>
+            <li>Why the resulting 3D output matters</li>
+          </ul> -->
+        </div>
 
-          <div class="card" style="padding: 18px;">
-            <img
-              src="./assets/main_framework.png"
-              alt="Overview of the CompMVR framework"
-              class="figure-img"
-            />
-          </div>
+        <div class="framework-wrapper">
+          <img
+            src="./assets/main_framework.png"
+            alt="Overview of the CompMVR framework"
+            class="framework-img"
+          />
         </div>
       </div>
     </section>
@@ -436,6 +456,7 @@
     <section class="section">
       <div class="container">
         <h2>Experiments</h2>
+        <p></p>
         <h3>Qualitative Comparison</h3>
         <div>
           <b>2D Restoration Results</b>
