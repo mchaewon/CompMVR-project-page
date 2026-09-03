@@ -279,6 +279,22 @@
       justify-content: center;
       margin-top: 24px;
     }
+    .quant-item {
+      margin: 0;
+    }
+
+    .quant-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .quant-item figcaption {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
     @media (max-width: 768px) {
       .framework-img {
         width: 100%;
@@ -456,7 +472,49 @@
     <section class="section">
       <div class="container">
         <h2>Experiments</h2>
-        <p></p>
+        <h3>Quantitative Results</h3>
+          <b>2D restoration</b>
+          <img
+            class="figure-img"
+            src="./assets/2Deval_consistency.png"
+            alt="2Deval_consistency"
+          />
+          <figcaption>
+            <b>Free.</b> CompMVR achieves competitive 2D restoration quality and the best cross-view consistency, 
+            demonstrating superior geometric reliability over state-of-the-art single-image and video restoration methods.
+          </figcaption>
+          <b>3D Downstream Tasks</b>
+          <img
+            class="figure-img"
+            src="./assets/3DGS_eval.png"
+            alt="3DGS_eval"
+          />
+          <figcaption>
+            <b>Free.</b> Across diverse codec and QP settings, CompMVR consistently achieves the best novel-view synthesis performance 
+            among restoration methods, with higher PSNR/SSIM and lower LPIPS, demonstrating improved downstream 3D reconstruction quality.
+          </figcaption>
+
+          <div class="quant-grid">
+            <figure class="quant-item">
+              <img src="./assets/camera_pose_estimation.png" alt="VGGT camera pose estimation results" />
+              <figcaption>
+                <b>RealEstate10K.</b> CompMVR consistently achieves the best camera pose estimation accuracy across diverse codec and QP settings, 
+                demonstrating that our restoration better preserves geometrically reliable cross-view information.
+              </figcaption>
+            </figure>
+
+            <figure class="quant-item">
+              <img src="./assets/view_matching.png" alt="VGGT view matching results" />
+              <figcaption>
+                <b>RealEstate10K.</b> CompMVR improves view matching across compressed views, 
+                demonstrating that restoring cross-view consistency leads to more reliable correspondences for downstream geometric tasks.
+              </figcaption>
+            </figure>
+
+          </div>
+
+        </div>
+
         <h3>Qualitative Comparison</h3>
         <div>
           <b>2D Restoration Results</b>
@@ -489,12 +547,13 @@
     <section class="section">
       <div class="container">
         <h2>BibTeX</h2>
-        <pre>@inproceedings{yourproject2026,
-  title     = {Your Project Title},
-  author    = {Author One and Author Two and Author Three},
-  booktitle = {Conference Name},
-  year      = {2026}
-}</pre>
+        <!-- <pre>@inproceedings{yourproject2026,
+            title     = {Your Project Title},
+            author    = {Author One and Author Two and Author Three},
+            booktitle = {Conference Name},
+            year      = {2026}
+          }
+        </pre> -->
       </div>
     </section>
   </main>
