@@ -255,6 +255,13 @@
     .subtle {
       color: var(--muted);
     }
+    .figure-img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 24px auto 0;
+    }
 
     @media (max-width: 900px) {
       .grid-2 {
@@ -382,10 +389,7 @@
           and compressed datasets that jointly refines compressed views while preserving cross-view consistency. 
           Unlike conventional restoration methods that optimize each image independently for 2D perceptual quality, 
           CompMVR leverages learned compression priors and cross-view correspondence to recover visual details while 
-          improving geometric reliability across views. Experiments across diverse datasets, codecs, and compression levels 
-          demonstrate gains in restoration quality and downstream 3D tasks, including novel-view synthesis, camera pose estimation, 
-          and view matching. These results establish compressed multi-view restoration as a distinct problem and highlight its 
-          importance for 3D reconstruction under lossy compression.
+          improving geometric reliability across views. 
         </p>
         <p>
           Experiments across diverse datasets, codecs, and compression levels demonstrate gains in restoration quality and 
@@ -394,9 +398,10 @@
           importance for 3D reconstruction under lossy compression.
         </p>
         <img
-              src="./assets/figure1.png"
-              alt="Problem overview"
-            />
+          class="figure-img"
+          src="./assets/figure1.png"
+          alt="Problem overview"
+        />
       </div>
     </section>
 
@@ -421,7 +426,7 @@
             <img
               src="./assets/main_framework.png"
               alt="Overview of the CompMVR framework"
-              style="width: 100%; display: block; border-radius: 14px;"
+              class="figure-img"
             />
           </div>
         </div>
